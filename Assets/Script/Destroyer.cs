@@ -14,7 +14,7 @@ public class Destroyer : MonoBehaviour
     void Start()
     {
 
-        objectsToDestroy = FindObjectsOfType<ToDestroy>();
+        //objectsToDestroy = FindObjectsOfType<ToDestroy>();
 
 
     }

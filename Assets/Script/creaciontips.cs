@@ -519,8 +519,9 @@ public class creaciontips : MonoBehaviour
 
         object1 = true;
         objetoCreado = Instantiate(prefabitem1, Vector3.zero, Quaternion.identity);
-
-
+        //GameObject objInstanciado = objetoCreado.gameObject;
+        //Destroyer des = objInstanciado.GetComponent<Destroyer>();
+        
     }
     public void Carro()
     {
