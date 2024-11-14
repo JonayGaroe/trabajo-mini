@@ -7,6 +7,9 @@ public class creaciontips : MonoBehaviour
 {
 
     [SerializeField]
+    GameObject BotonCrear;
+
+    [SerializeField]
     GameObject prefabitem1;
     GameObject objetoCreado;
  // botonloquequieras
@@ -521,13 +524,14 @@ public class creaciontips : MonoBehaviour
         objetoCreado = Instantiate(prefabitem1, Vector3.zero, Quaternion.identity);
         //GameObject objInstanciado = objetoCreado.gameObject;
         //Destroyer des = objInstanciado.GetComponent<Destroyer>();
-        
+        BotonCrear.SetActive(false);
     }
     public void Carro()
     {
 
         object2 = true;
         objetoCreado2 = Instantiate(prefabitem2, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -537,6 +541,7 @@ public class creaciontips : MonoBehaviour
 
         object3 = true;
         objetoCreado3 = Instantiate(prefabitem3, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -545,6 +550,7 @@ public class creaciontips : MonoBehaviour
 
         object4 = true;
         objetoCreado4 = Instantiate(prefabitem4, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -555,6 +561,7 @@ public class creaciontips : MonoBehaviour
 
         object5 = true;
         objetoCreado5 = Instantiate(prefabitem5, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -563,7 +570,7 @@ public class creaciontips : MonoBehaviour
 
         object6 = true;
         objetoCreado6 = Instantiate(prefabitem6, Vector3.zero, Quaternion.identity);
-
+        BotonCrear.SetActive(false);
 
     }
 
@@ -572,6 +579,7 @@ public class creaciontips : MonoBehaviour
 
         object7 = true;
         objetoCreado7 = Instantiate(prefabitem7, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -580,6 +588,7 @@ public class creaciontips : MonoBehaviour
 
         object8 = true;
         objetoCreado8 = Instantiate(prefabitem8, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -588,6 +597,7 @@ public class creaciontips : MonoBehaviour
 
         object9 = true;
         objetoCreado9 = Instantiate(prefabitem9, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -596,6 +606,7 @@ public class creaciontips : MonoBehaviour
 
         object10 = true;
         objetoCreado10 = Instantiate(prefabitem10, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -605,6 +616,7 @@ public class creaciontips : MonoBehaviour
 
         object11 = true;
         objetoCreado11 = Instantiate(prefabitem11, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -614,6 +626,7 @@ public class creaciontips : MonoBehaviour
 
         object12 = true;
         objetoCreado12 = Instantiate(prefabitem12, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -622,6 +635,7 @@ public class creaciontips : MonoBehaviour
 
         object13 = true;
         objetoCreado13 = Instantiate(prefabitem13, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
@@ -631,6 +645,7 @@ public class creaciontips : MonoBehaviour
 
         object14 = true;
         objetoCreado14 = Instantiate(prefabitem14, Vector3.zero, Quaternion.identity);
+        BotonCrear.SetActive(false);
 
 
     }
