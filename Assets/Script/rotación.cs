@@ -11,10 +11,10 @@ public class rotación : MonoBehaviour
     public float movementEjeY;
     public float movementEjeZ = 1;
     public float fastmovement = 1.5f;
-    bool Mover = false;
-    bool mover1 = false;
-    bool mover2 = false;    
-    bool mover3 = false;
+    //  bool Mover = false;
+    // bool mover1 = false;
+    // bool mover2 = false;    
+    // bool mover3 = false;
 
     // Start is called before the first frame update
 
