@@ -338,7 +338,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1795010747}
+      - m_Target: {fileID: 1133164604}
         m_TargetAssemblyTypeName: "rotaci\xF3n, Assembly-CSharp"
         m_MethodName: MovimientoABA
         m_Mode: 1
@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 55019669}
   - component: {fileID: 55019668}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BotonRotar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1795010747}
+      - m_Target: {fileID: 1133164604}
         m_TargetAssemblyTypeName: "rotaci\xF3n, Assembly-CSharp"
         m_MethodName: Rotate
         m_Mode: 1
@@ -2678,11 +2678,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407523140}
   m_CullTransparentMesh: 1
---- !u!1 &429841545 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6900677301433471436, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-  m_PrefabInstance: {fileID: 1942953437}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &507073167
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,9 +4298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc044c017e9feca448e6bffb884d8e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raycastDistance: 100
+  selectedObject: {fileID: 0}
   BotonCrear: {fileID: 587163092}
-  prefabitem1: {fileID: 9204032130196355218, guid: 14d0c04cd91210343b40716e5a6f4048, type: 3}
-  prefabitem2: {fileID: 5478816173971673285, guid: a5e04794ba9cd154095cdaf017058357, type: 3}
+  prefabitem1: {fileID: 5478816173971673285, guid: a5e04794ba9cd154095cdaf017058357, type: 3}
+  prefabitem2: {fileID: 9204032130196355218, guid: 14d0c04cd91210343b40716e5a6f4048, type: 3}
   prefabitem3: {fileID: 9051913899906094834, guid: 7813bab5c341052429d49d74460697e7, type: 3}
   prefabitem4: {fileID: 783552173277222162, guid: 36e927ef9dabe544b8e31b862610eb89, type: 3}
   prefabitem5: {fileID: 4463242229819412285, guid: 7e9e5ef8da6d48343b6a960dcd96ef64, type: 3}
@@ -4345,10 +4342,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7742ae58466324d409897ecc126ff9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedObject: {fileID: 0}
   movementEjeX: 0
   movementEjeY: 0
   movementEjeZ: 0
   fastmovement: 1.5
+  raycastDistance: 100
+  ButtonRotar: {fileID: 55019666}
+  ButtonIZQ: {fileID: 0}
+  ButtonDEREC: {fileID: 0}
+  ButtonABAJ: {fileID: 0}
+  ButtonARRIB: {fileID: 0}
 --- !u!1 &843693322
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,7 +4437,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1795010747}
+      - m_Target: {fileID: 1133164604}
         m_TargetAssemblyTypeName: "rotaci\xF3n, Assembly-CSharp"
         m_MethodName: MovimientoIZQ
         m_Mode: 1
@@ -5012,27 +5016,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7513297493162946847, guid: 1dd00a4e04a46964487121e66a600cf8, type: 3}
---- !u!65 &1078505236
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078505228}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.024999999, z: 1}
-  m_Center: {x: 0, y: 0.012499999, z: 0}
 --- !u!1 &1119836397
 GameObject:
   m_ObjectHideFlags: 0
@@ -5270,10 +5253,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7742ae58466324d409897ecc126ff9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedObject: {fileID: 0}
   movementEjeX: 0
   movementEjeY: 0
   movementEjeZ: 0
   fastmovement: 1.5
+  raycastDistance: 100
+  ButtonRotar: {fileID: 55019666}
+  ButtonIZQ: {fileID: 843693322}
+  ButtonDEREC: {fileID: 2063298192}
+  ButtonABAJ: {fileID: 6739194}
+  ButtonARRIB: {fileID: 1739169823}
 --- !u!4 &1133164605
 Transform:
   m_ObjectHideFlags: 0
@@ -5489,9 +5479,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1dd00a4e04a46964487121e66a600cf8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1078505232}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1dd00a4e04a46964487121e66a600cf8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1078505236}
   m_SourcePrefab: {fileID: 100100000, guid: 1dd00a4e04a46964487121e66a600cf8, type: 3}
 --- !u!1 &1274229958
 GameObject:
@@ -7378,7 +7365,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1795010747}
+      - m_Target: {fileID: 1133164604}
         m_TargetAssemblyTypeName: "rotaci\xF3n, Assembly-CSharp"
         m_MethodName: MovimientoArri
         m_Mode: 1
@@ -7428,65 +7415,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739169823}
   m_CullTransparentMesh: 1
---- !u!114 &1795010747 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1921880442151100706, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-  m_PrefabInstance: {fileID: 1942953437}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429841545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7742ae58466324d409897ecc126ff9b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &1795010749
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429841545}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.82, y: 0.51, z: 1}
-  m_Center: {x: 0, y: 0.2, z: 0}
---- !u!54 &1795010750
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429841545}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1845330765
 GameObject:
   m_ObjectHideFlags: 0
@@ -7878,85 +7806,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933353158}
   m_CullTransparentMesh: 1
---- !u!1001 &1942953437
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -1921880442151100706, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: fastmovement
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -1921880442151100706, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: movementEjeX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -1921880442151100706, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: movementEjeY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1921880442151100706, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: movementEjeZ
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -22.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093354753003834230, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6900677301433471436, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      propertyPath: m_Name
-      value: Cajero
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6900677301433471436, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1795010749}
-    - targetCorrespondingSourceObject: {fileID: 6900677301433471436, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1795010750}
-  m_SourcePrefab: {fileID: 100100000, guid: c74892d26a97c3f4aa265e94f4ac3778, type: 3}
 --- !u!1 &1970491515
 GameObject:
   m_ObjectHideFlags: 0
@@ -8138,10 +7987,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8276,7 +8125,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1795010747}
+      - m_Target: {fileID: 1133164604}
         m_TargetAssemblyTypeName: "rotaci\xF3n, Assembly-CSharp"
         m_MethodName: MovimientoDRC
         m_Mode: 1
@@ -8612,4 +8461,3 @@ SceneRoots:
   - {fileID: 831728916}
   - {fileID: 1845330767}
   - {fileID: 1133164605}
-  - {fileID: 1942953437}

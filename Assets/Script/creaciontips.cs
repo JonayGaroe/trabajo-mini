@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class creaciontips : MonoBehaviour
 {
+    public float raycastDistance = 100f;
+
 
     [SerializeField]
+    GameObject selectedObject;
+
+     [SerializeField]
     GameObject BotonCrear;
 
     [SerializeField]
     GameObject prefabitem1;
     GameObject objetoCreado;
- // botonloquequieras
- //serializefield gameobject
-    
 
     [SerializeField]
     GameObject prefabitem2;
@@ -83,58 +85,44 @@ public class creaciontips : MonoBehaviour
     bool object12 = false;
     bool object13 = false;
     bool object14 = false;
-    // Start is called before the first frame update
-    void Start()
-    {
+    bool Seleccion = false;
 
-        //No Hace nada
-
-        /*objetoCreado = Instantiate(prefabitem1, Vector3.zero, Quaternion.identity);
-        objetoCreado2 = Instantiate(prefabitem2, Vector3.zero, Quaternion.identity);
-        objetoCreado3 = Instantiate(prefabitem3, Vector3.zero, Quaternion.identity);
-        objetoCreado4 = Instantiate(prefabitem4, Vector3.zero, Quaternion.identity);
-        objetoCreado5 = Instantiate(prefabitem5, Vector3.zero, Quaternion.identity);
-        objetoCreado6 = Instantiate(prefabitem6, Vector3.zero, Quaternion.identity);
-        objetoCreado7 = Instantiate(prefabitem7, Vector3.zero, Quaternion.identity);
-        objetoCreado8 = Instantiate(prefabitem8, Vector3.zero, Quaternion.identity);
-        objetoCreado9 = Instantiate(prefabitem9, Vector3.zero, Quaternion.identity);
-        objetoCreado10 = Instantiate(prefabitem10, Vector3.zero, Quaternion.identity);
-        objetoCreado11 = Instantiate(prefabitem11, Vector3.zero, Quaternion.identity);
-        objetoCreado12 = Instantiate(prefabitem12, Vector3.zero, Quaternion.identity);
-        objetoCreado13 = Instantiate(prefabitem13, Vector3.zero, Quaternion.identity);
-        objetoCreado14 = Instantiate(prefabitem14, Vector3.zero, Quaternion.identity);
-
-        */
-
-
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
 
+        Seleccion =!Seleccion;
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        // Llamamos al método de selección cuando el usuario hace clic con el botón izquierdo del ratón (botón 0)
+        if (Input.GetMouseButtonDown(0))
+        {
+
+          if (Seleccion == true)
+          { 
+            SelectObject();
+
+          }
+
+        }
 
 
         if (object1)
         {
+            objetoCreado.SetActive(false);
 
-
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
 
-
                 objetoCreado.transform.position = hit.point;
 
-
             }
+            objetoCreado.SetActive(true);
 
             objetoCreado.transform.Rotate(Input.mouseScrollDelta * 16);
+
             if(Input.GetMouseButtonDown(0))
             {
 
@@ -144,12 +132,13 @@ public class creaciontips : MonoBehaviour
 
             }
 
-
         }
 
         if (object2)
         {
-
+            objetoCreado2.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -160,7 +149,7 @@ public class creaciontips : MonoBehaviour
 
 
             }
-
+            objetoCreado2.SetActive(true);
             objetoCreado2.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -171,12 +160,13 @@ public class creaciontips : MonoBehaviour
 
             }
 
-
         }
 
         if (object3)
         {
-
+            objetoCreado3.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -188,7 +178,10 @@ public class creaciontips : MonoBehaviour
 
             }
 
+            objetoCreado3.SetActive(true);
             objetoCreado3.transform.Rotate(Input.mouseScrollDelta * 16);
+
+
             if (Input.GetMouseButtonDown(0))
             {
 
@@ -203,7 +196,10 @@ public class creaciontips : MonoBehaviour
 
         if (object4)
         {
+            objetoCreado4.SetActive(false);
 
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -214,7 +210,7 @@ public class creaciontips : MonoBehaviour
 
 
             }
-
+            objetoCreado4.SetActive(true);
             objetoCreado4.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -227,9 +223,13 @@ public class creaciontips : MonoBehaviour
 
 
         }
+
         if (object5)
         {
 
+            objetoCreado5.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -241,6 +241,7 @@ public class creaciontips : MonoBehaviour
 
             }
 
+            objetoCreado5.SetActive(true);
             objetoCreado5.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -251,17 +252,15 @@ public class creaciontips : MonoBehaviour
 
             }
 
-
-
-
-
-
-
-
         }
+
         if (object6)
         {
 
+           objetoCreado6.SetActive(false);
+           Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+           RaycastHit hit;
+       
 
 
             if (Physics.Raycast(ray, out hit))
@@ -272,7 +271,7 @@ public class creaciontips : MonoBehaviour
 
 
             }
-
+            objetoCreado6.SetActive(true);
             objetoCreado6.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -289,6 +288,10 @@ public class creaciontips : MonoBehaviour
         if (object7)
         {
 
+            objetoCreado7.SetActive(false);
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -299,7 +302,7 @@ public class creaciontips : MonoBehaviour
 
 
             }
-
+            objetoCreado7.SetActive(true);
             objetoCreado7.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -317,7 +320,9 @@ public class creaciontips : MonoBehaviour
 
         if (object8)
         {
-
+            objetoCreado8.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -329,6 +334,7 @@ public class creaciontips : MonoBehaviour
 
             }
 
+            objetoCreado8.SetActive(true);
             objetoCreado8.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -345,6 +351,9 @@ public class creaciontips : MonoBehaviour
         if (object9)
         {
 
+            objetoCreado9.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -356,6 +365,7 @@ public class creaciontips : MonoBehaviour
 
             }
 
+            objetoCreado9.SetActive(true);
             objetoCreado9.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -370,7 +380,10 @@ public class creaciontips : MonoBehaviour
         }
         if (object10)
         {
+            objetoCreado10.SetActive(false);
 
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -382,6 +395,7 @@ public class creaciontips : MonoBehaviour
 
             }
 
+            objetoCreado10.SetActive(true);
             objetoCreado10.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -396,8 +410,9 @@ public class creaciontips : MonoBehaviour
         }
         if (object11)
         {
-
-
+            objetoCreado11.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
@@ -407,7 +422,7 @@ public class creaciontips : MonoBehaviour
 
 
             }
-
+            objetoCreado11.SetActive(true);
             objetoCreado11.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -424,7 +439,9 @@ public class creaciontips : MonoBehaviour
 
         if (object12)
         {
-
+            objetoCreado12.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -435,7 +452,7 @@ public class creaciontips : MonoBehaviour
 
 
             }
-
+            objetoCreado12.SetActive(true);
             objetoCreado12.transform.Rotate(Input.mouseScrollDelta * 16);
             if (Input.GetMouseButtonDown(0))
             {
@@ -451,7 +468,9 @@ public class creaciontips : MonoBehaviour
 
         if (object13)
         {
-
+            objetoCreado13.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -463,7 +482,9 @@ public class creaciontips : MonoBehaviour
 
             }
 
+            objetoCreado13.SetActive(true);
             objetoCreado13.transform.Rotate(Input.mouseScrollDelta * 16);
+
             if (Input.GetMouseButtonDown(0))
             {
 
@@ -478,7 +499,9 @@ public class creaciontips : MonoBehaviour
 
         if (object14)
         {
-
+            objetoCreado14.SetActive(false);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
 
             if (Physics.Raycast(ray, out hit))
@@ -490,7 +513,9 @@ public class creaciontips : MonoBehaviour
 
             }
 
+            objetoCreado14.SetActive(true);
             objetoCreado14.transform.Rotate(Input.mouseScrollDelta * 16);
+
             if (Input.GetMouseButtonDown(0))
             {
 
@@ -508,14 +533,56 @@ public class creaciontips : MonoBehaviour
     }
 
 
-          public void creacion1()
-          {
+    void SelectObject()
+    {
 
-             prefabitem1.SetActive(true);
+
+        if (Seleccion == true)
+        {
+            // Crear un rayo que comienza en la posición de la cámara y va en la dirección de la cámara
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;  // Esta variable almacenará la información sobre lo que golpeó el rayo
+
+            // Hacemos el raycast y comprobamos si tocamos algo
+
+
+            if (Physics.Raycast(ray, out hit, raycastDistance)&& hit.collider.GetComponent<rotación>())
+            {  
+
+             // Si el rayo toca algo, 'hit' contendrá el objeto tocado.
+              selectedObject = hit.collider.gameObject;
+
+             // Imprimir el nombre del objeto seleccionado en la consola
+             Debug.Log("Seleccionaste el objeto: " + selectedObject.name);
+
+
+             // Aquí puedes hacer algo con el objeto seleccionado, por ejemplo cambiar su color:
+             // para ponerlo con colores selectedObject.GetComponent<Renderer>().material.color = Color.blue;
+                selectedObject.GetComponent<Renderer>();
+
+            }
+
+        }
+
+    }
+    void deselecionarobject()
+    {
+
+        selectedObject = null;
+
+
+    }
+
+
+    public void creacion1()
+    {
+
+      prefabitem1.SetActive(true);
 
              
 
-          }
+    }
 
     public void Cesta()
     {
@@ -646,7 +713,6 @@ public class creaciontips : MonoBehaviour
         object14 = true;
         objetoCreado14 = Instantiate(prefabitem14, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
-
 
     }
 

@@ -73,10 +73,10 @@ PrefabInstance:
       addedObject: {fileID: 3127848818889603882}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eacf7a6bffa727b45810cab3cf542b5a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5775444171223436303}
+      addedObject: {fileID: 7376033319386875}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eacf7a6bffa727b45810cab3cf542b5a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7376033319386875}
+      addedObject: {fileID: 1141836071527813237}
   m_SourcePrefab: {fileID: 100100000, guid: eacf7a6bffa727b45810cab3cf542b5a, type: 3}
 --- !u!1 &211226678816730402 stripped
 GameObject:
@@ -97,41 +97,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectioPrefab: {fileID: 211226678816730402}
   isSelected: 0
---- !u!70 &5775444171223436303
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211226678816730402}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.025000006, y: 0.29745}
-  m_Size: {x: 0.84999996, y: 0.5949}
-  m_Direction: 0
 --- !u!114 &7376033319386875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +109,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7742ae58466324d409897ecc126ff9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementEjeX: 0
+  movementEjeY: 0
+  movementEjeZ: 0
+  fastmovement: 1.5
+--- !u!65 &1141836071527813237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211226678816730402}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.84999996, y: 0.5949, z: 0.84999996}
+  m_Center: {x: -0.025000006, y: 0.29745, z: 0.025000006}

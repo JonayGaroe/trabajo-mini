@@ -4,98 +4,103 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
+
 public class rotación : MonoBehaviour
 {
-
+    [SerializeField]
+    GameObject selectedObject;
     public float movementEjeX = 1;
     public float movementEjeY;
     public float movementEjeZ = 1;
     public float fastmovement = 1.5f;
-    //  bool Mover = false;
-    // bool mover1 = false;
-    // bool mover2 = false;    
-    // bool mover3 = false;
-
-    // Start is called before the first frame update
-
-    void Start()
-    {
-
-
-
-
-
-
-    }
-
-
-
-
-    // Update is called once per frame
+    bool Seleccion = false;
+    public float raycastDistance = 100f;
+    [SerializeField]
+    GameObject ButtonRotar;
+    [SerializeField]
+    GameObject ButtonIZQ;
+    [SerializeField]
+    GameObject ButtonDEREC;
+    [SerializeField]
+    GameObject ButtonABAJ;
+    [SerializeField]
+    GameObject ButtonARRIB;
     void Update()
     {
-      /* 
-        if (Mover == true)
+
+        if (Input.GetMouseButtonDown(0))
         {
 
-       
-            movementEjeX = Input.GetAxis("Horizontal") * Time.deltaTime * fastmovement;
-            transform.Translate(movementEjeX, 0f, 0f);
-            Debug.Log("MovimientoIZQ");
-            Mover = false;
+            if (Seleccion == true)
+            {
 
 
-
-        }
-
-        if (mover1 == true)
-        {
+               SelectObject();
 
 
-            movementEjeX = Input.GetAxis("Horizontal") * Time.deltaTime * fastmovement;
-            transform.Translate(movementEjeX, movementEjeY, movementEjeZ);
-            Debug.Log("MovimientoDRC");
-            mover1 = false;
-
-
+            }
 
         }
-
-        if (mover2 == true)
-        {
-
-        
-
-            movementEjeZ = Input.GetAxis("Vertical") * Time.deltaTime * fastmovement;
-            transform.Translate(0f, movementEjeY, movementEjeZ);
-            Debug.Log("MovimientoArri");
-            mover2 = false;
-        }
-
-
-
-        if (mover3 == true)
-        {
-
-
-            movementEjeZ = Input.GetAxis("Vertical") * Time.deltaTime * fastmovement;
-            transform.Translate(movementEjeX, movementEjeY, movementEjeZ);
-            Debug.Log("MovimientoArri");
-            mover3 = false; 
-
-        }
-
-
-
-        */
 
     }
-    public void Rotate()
-    { 
-        
-     transform.Rotate(0f,8f,0f);
-     Debug.Log("Esta Rotando");
 
+
+
+    void SelectObject()
+    {
+
+
+        if (Seleccion == true)
+        {
+            // Crear un rayo que comienza en la posición de la cámara y va en la dirección de la cámara
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;  // Esta variable almacenará la información sobre lo que golpeó el rayo
+
+            // Hacemos el raycast y comprobamos si tocamos algo
+
+
+            if (Physics.Raycast(ray, out hit, raycastDistance) && hit.collider.GetComponent<rotación>())
+            {
+
+                // Si el rayo toca algo, 'hit' contendrá el objeto tocado.
+                selectedObject = hit.collider.gameObject;
+
+                // Imprimir el nombre del objeto seleccionado en la consola
+                Debug.Log("Seleccionaste el objeto: " + selectedObject.name);
+
+
+                // Aquí puedes hacer algo con el objeto seleccionado, por ejemplo cambiar su color:
+                // para ponerlo con colores selectedObject.GetComponent<Renderer>().material.color = Color.blue;
+                selectedObject.GetComponent<Renderer>();
+
+            }
+        }
+
+    }
+    void deselecionarobject()
+    {
+
+
+        selectedObject = null;
+
+
+    }
+
+
+
+
+
+    public void Rotate()
+    {
+
+        if (ButtonRotar.activeSelf) 
+        {
+            
+          selectedObject.transform.Rotate(0f, 8f, 0f);
+          Debug.Log("Esta Rotando");
+
+        }
 
 
     }
@@ -103,42 +108,51 @@ public class rotación : MonoBehaviour
     public void MovimientoIZQ()
     {
 
-        //Mover = true;
-        transform.Translate(-1f, 0f, 0f);
-        Debug.Log("MovimientoIZQ");
+        if (ButtonIZQ.activeSelf)
+        {
 
+           selectedObject.transform.Translate(-1f, 0f, 0f);
+           Debug.Log("MovimientoIZQ");
+
+        }
 
 
     }
 
     public void MovimientoDRC()
     {
+        if(ButtonDEREC.activeSelf)
+        { 
 
-        //mover1 = true;
-        transform.Translate(1f, 0f, 0f);
-        Debug.Log("MovimientoDRC");
+           selectedObject.transform.Translate(1f, 0f, 0f);
+           Debug.Log("MovimientoDRC");
 
+        }
 
     }
 
     public void MovimientoABA()
     {
+        if (ButtonABAJ.activeSelf)
+        {
 
-       // mover2 = true;
-        transform.Translate(0f, 0f, -1f);
-        Debug.Log("MovimientoABA");
+            selectedObject.transform.Translate(0f, 0f, -1f);
+            Debug.Log("MovimientoABA");
 
+        }
 
 
     }
 
     public void MovimientoArri()
     {
+        if (ButtonARRIB.activeSelf)
+        {
 
-        //mover3 = true;
-        transform.Translate(0f, 0f, 1f);
-        Debug.Log("MovimientoArri");
+            selectedObject.transform.Translate(0f, 0f, 1f);
+            Debug.Log("MovimientoArri");
 
+        }
 
     }
 
