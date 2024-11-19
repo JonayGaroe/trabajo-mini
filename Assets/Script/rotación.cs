@@ -25,13 +25,17 @@ public class rotación : MonoBehaviour
     GameObject ButtonABAJ;
     [SerializeField]
     GameObject ButtonARRIB;
+    [SerializeField]
+    GameObject ButtonEliminar;
+    [SerializeField]
+    GameObject ButtonInfo;
     void Update()
     {
 
         if (Input.GetMouseButtonDown(0))
         {
 
-            if (Seleccion == true)
+            if (Seleccion = true)
             {
 
 
@@ -50,7 +54,7 @@ public class rotación : MonoBehaviour
     {
 
 
-        if (Seleccion == true)
+        if (Seleccion = true)
         {
             // Crear un rayo que comienza en la posición de la cámara y va en la dirección de la cámara
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -152,6 +156,20 @@ public class rotación : MonoBehaviour
             selectedObject.transform.Translate(0f, 0f, 1f);
             Debug.Log("MovimientoArri");
 
+        }
+
+    }
+
+    public void Eliminar()
+    {
+
+        ButtonInfo.SetActive(true);
+        if (ButtonEliminar.activeSelf)
+        {
+
+            Destroy(selectedObject);
+            Debug.Log("Se Elimino");
+            ButtonInfo.SetActive(false);
         }
 
     }

@@ -92,10 +92,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7742ae58466324d409897ecc126ff9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedObject: {fileID: 0}
   movementEjeX: 0
   movementEjeY: 0
   movementEjeZ: 0
   fastmovement: 1.5
+  raycastDistance: 100
+  ButtonRotar: {fileID: 0}
+  ButtonIZQ: {fileID: 0}
+  ButtonDEREC: {fileID: 0}
+  ButtonABAJ: {fileID: 0}
+  ButtonARRIB: {fileID: 0}
+  ButtonEliminar: {fileID: 0}
 --- !u!65 &-759315046402417782
 BoxCollider:
   m_ObjectHideFlags: 0
