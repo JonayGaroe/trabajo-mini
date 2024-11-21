@@ -7,6 +7,11 @@ public class creaciontips : MonoBehaviour
 {
     public float raycastDistance = 100f;
 
+    [SerializeField]
+    LeanTweenType tipoAnimacion;
+
+    [SerializeField]
+    GameObject ObjetosSelecionados;
 
     [SerializeField]
     GameObject selectedObject;
@@ -587,13 +592,18 @@ public class creaciontips : MonoBehaviour
 
     public void Cesta()
     {
+      
 
         object1 = true;
         objetoCreado = Instantiate(prefabitem1, Vector3.zero, Quaternion.identity);
         //GameObject objInstanciado = objetoCreado.gameObject;
         //Destroyer des = objInstanciado.GetComponent<Destroyer>();
+        ObjetosSelecionados = objetoCreado;
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
+        Animaciones();
+
+
     }
     public void Carro()
     {
@@ -602,17 +612,20 @@ public class creaciontips : MonoBehaviour
         objetoCreado2 = Instantiate(prefabitem2, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado2;
+        Animaciones();
     }
 
     public void Puerta()
     {
+       
 
         object3 = true;
         objetoCreado3 = Instantiate(prefabitem3, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado3;
+        Animaciones();
     }
     public void PuertaValla()
     {
@@ -621,7 +634,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado4 = Instantiate(prefabitem4, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado4;
+        Animaciones();
     }
 
 
@@ -632,7 +646,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado5 = Instantiate(prefabitem5, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado5;
+        Animaciones();
     }
     public void Caja()
     {
@@ -641,6 +656,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado6 = Instantiate(prefabitem6, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
+        ObjetosSelecionados = objetoCreado6;
+        Animaciones();
     }
 
     public void Estante()
@@ -650,7 +667,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado7 = Instantiate(prefabitem7, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado7;
+        Animaciones();
     }
     public void Estante2()
     {
@@ -659,6 +677,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado8 = Instantiate(prefabitem8, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
+        ObjetosSelecionados = objetoCreado8;
+        Animaciones();
 
     }
     public void Cajera()
@@ -668,7 +688,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado9 = Instantiate(prefabitem9, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado9;
+        Animaciones();
     }
     public void Congelador()
     {
@@ -677,7 +698,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado10 = Instantiate(prefabitem10, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado10;
+        Animaciones();
     }
 
     public void Pared()
@@ -687,7 +709,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado11 = Instantiate(prefabitem11, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado11;
+        Animaciones();
     }
 
     public void Valla()
@@ -697,7 +720,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado12 = Instantiate(prefabitem12, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado12;
+        Animaciones();
     }
     public void Ventana()
     {
@@ -706,7 +730,8 @@ public class creaciontips : MonoBehaviour
         objetoCreado13 = Instantiate(prefabitem13, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
-
+        ObjetosSelecionados = objetoCreado13;
+        Animaciones();
     }
 
     public void Frutera()
@@ -716,6 +741,23 @@ public class creaciontips : MonoBehaviour
         objetoCreado14 = Instantiate(prefabitem14, Vector3.zero, Quaternion.identity);
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
+        ObjetosSelecionados = objetoCreado14;
+        Animaciones();
     }
+
+    void Animaciones()
+    {
+        // para rotar objetos animacion
+        // LeanTween.rotateAround(ObjetosSelecionados, new Vector3(7f, 7f, 7f), 1f).setEase(tipoAnimacion);
+        LeanTween.scale(ObjetosSelecionados, new Vector3(7f,7f,7f), 1f).setEase(tipoAnimacion);     //.setOnComplete(() =>
+         //{
+
+
+
+
+            //  });
+   
+    }
+
 
 }

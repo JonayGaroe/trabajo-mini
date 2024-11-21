@@ -7,6 +7,10 @@ using UnityEngine.UIElements;
 
 public class rotación : MonoBehaviour
 {
+
+    [SerializeField]
+    LeanTweenType tipoAnimacion;
+
     [SerializeField]
     GameObject selectedObject;
     public float movementEjeX = 1;
@@ -38,9 +42,7 @@ public class rotación : MonoBehaviour
             if (Seleccion = true)
             {
 
-
                SelectObject();
-
 
             }
 
@@ -56,6 +58,7 @@ public class rotación : MonoBehaviour
 
         if (Seleccion = true)
         {
+
             // Crear un rayo que comienza en la posición de la cámara y va en la dirección de la cámara
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -102,10 +105,9 @@ public class rotación : MonoBehaviour
         {
             
           selectedObject.transform.Rotate(0f, 8f, 0f);
-          Debug.Log("Esta Rotando");
+            Debug.Log("Esta Rotando");
 
         }
-
 
     }
 
@@ -116,7 +118,7 @@ public class rotación : MonoBehaviour
         {
 
            selectedObject.transform.Translate(-1f, 0f, 0f);
-           Debug.Log("MovimientoIZQ");
+           Debug.Log("MovimientoIZQUIERDA");
 
         }
 
@@ -129,7 +131,7 @@ public class rotación : MonoBehaviour
         { 
 
            selectedObject.transform.Translate(1f, 0f, 0f);
-           Debug.Log("MovimientoDRC");
+           Debug.Log("MovimientoDERECHA");
 
         }
 
@@ -141,7 +143,7 @@ public class rotación : MonoBehaviour
         {
 
             selectedObject.transform.Translate(0f, 0f, -1f);
-            Debug.Log("MovimientoABA");
+            Debug.Log("MovimientoABAJO");
 
         }
 
@@ -154,7 +156,7 @@ public class rotación : MonoBehaviour
         {
 
             selectedObject.transform.Translate(0f, 0f, 1f);
-            Debug.Log("MovimientoArri");
+            Debug.Log("MovimientoArriBA");
 
         }
 
@@ -162,14 +164,29 @@ public class rotación : MonoBehaviour
 
     public void Eliminar()
     {
+       // LeanTween.scale(selectedObject, Vector3.zero, 2f).setEase(tipoAnimacion).setOnComplete(() =>
+       // {
 
+        //});
         ButtonInfo.SetActive(true);
         if (ButtonEliminar.activeSelf)
         {
+            // La escala va de un punto A a un Punto B 
+            LeanTween.scale(selectedObject, Vector3.zero, 0.5f).setEase(tipoAnimacion).setOnComplete(() =>
+            {
+                Destroy(selectedObject);
+                Debug.Log("Se Elimino");
+                ButtonInfo.SetActive(false);
 
-            Destroy(selectedObject);
-            Debug.Log("Se Elimino");
-            ButtonInfo.SetActive(false);
+            });
+
+            // Lo dejo aqui por si no me funciona un experimento
+
+            //Destroy(selectedObject);
+            //Debug.Log("Se Elimino");
+            //ButtonInfo.SetActive(false);
+
+
         }
 
     }
