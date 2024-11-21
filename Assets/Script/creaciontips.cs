@@ -76,6 +76,8 @@ public class creaciontips : MonoBehaviour
     GameObject objetoCreado14;
     [SerializeField]
     GameObject InformacionCrearla;
+    [SerializeField]
+    GameObject phereSeleciona;
 
     bool object1 = false;
     bool object2 = false;
@@ -123,7 +125,6 @@ public class creaciontips : MonoBehaviour
             {
 
                 objetoCreado.transform.position = hit.point;
-
             }
             objetoCreado.SetActive(true);
 
@@ -581,15 +582,6 @@ public class creaciontips : MonoBehaviour
     }
 
 
-    public void creacion1()
-    {
-
-      prefabitem1.SetActive(true);
-
-             
-
-    }
-
     public void Cesta()
     {
       
@@ -602,7 +594,7 @@ public class creaciontips : MonoBehaviour
         BotonCrear.SetActive(false);
         InformacionCrearla.SetActive(true);
         Animaciones();
-
+      
 
     }
     public void Carro()
@@ -614,6 +606,9 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado2;
         Animaciones();
+
+
+
     }
 
     public void Puerta()
@@ -626,6 +621,10 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado3;
         Animaciones();
+
+
+
+
     }
     public void PuertaValla()
     {
@@ -636,6 +635,9 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado4;
         Animaciones();
+
+
+
     }
 
 
@@ -648,6 +650,9 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado5;
         Animaciones();
+
+
+
     }
     public void Caja()
     {
@@ -658,7 +663,9 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado6;
         Animaciones();
+        
     }
+
 
     public void Estante()
     {
@@ -669,6 +676,7 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado7;
         Animaciones();
+
     }
     public void Estante2()
     {
@@ -680,6 +688,9 @@ public class creaciontips : MonoBehaviour
         ObjetosSelecionados = objetoCreado8;
         Animaciones();
 
+
+
+
     }
     public void Cajera()
     {
@@ -690,6 +701,9 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado9;
         Animaciones();
+
+
+
     }
     public void Congelador()
     {
@@ -700,7 +714,12 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado10;
         Animaciones();
+
+
+
     }
+
+
 
     public void Pared()
     {
@@ -711,10 +730,17 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado11;
         Animaciones();
+
+
+
+
     }
 
     public void Valla()
     {
+
+
+
 
         object12 = true;
         objetoCreado12 = Instantiate(prefabitem12, Vector3.zero, Quaternion.identity);
@@ -722,6 +748,7 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado12;
         Animaciones();
+
     }
     public void Ventana()
     {
@@ -732,6 +759,9 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado13;
         Animaciones();
+
+
+
     }
 
     public void Frutera()
@@ -743,6 +773,9 @@ public class creaciontips : MonoBehaviour
         InformacionCrearla.SetActive(true);
         ObjetosSelecionados = objetoCreado14;
         Animaciones();
+
+
+
     }
 
     void Animaciones()

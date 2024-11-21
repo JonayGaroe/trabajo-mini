@@ -32,7 +32,10 @@ public class BUTTON1 : MonoBehaviour
 
     [SerializeField]
     GameObject InformacionRotar;
-
+    [SerializeField]
+    GameObject BotonEscalar;
+    [SerializeField]
+    GameObject InformarEscalar;
 
 
     public void ClickEnBotonCrear()
@@ -63,17 +66,29 @@ public class BUTTON1 : MonoBehaviour
 
     public void ClickEnOk()
     {
+
         InformacionMover.SetActive(false);
         BotonMover.SetActive(false);
         BotonGirar.SetActive(false);
         InformacionRotar.SetActive(false);
         InformacionCrear.SetActive(true);
+        BotonEscalar.SetActive(false);
+        InformarEscalar.SetActive(false);
+    }
+    public void BotonEscalars()
+    {
 
+        BotonEscalar.SetActive(true);
+        InformarEscalar.SetActive(true);
+        BotonCrear.SetActive(false);
     }
 
-    
+
+
+
     public void BotonGiratorio()
     {
+
         InformacionRotar.SetActive(true);
         BotonGirar.SetActive(true);
 

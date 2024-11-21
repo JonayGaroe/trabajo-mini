@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -9,7 +8,7 @@ public class rotación : MonoBehaviour
 {
 
     [SerializeField]
-    LeanTweenType tipoAnimacion;
+  LeanTweenType tipoAnimacion;
 
     [SerializeField]
     GameObject selectedObject;
@@ -19,20 +18,31 @@ public class rotación : MonoBehaviour
     public float fastmovement = 1.5f;
     bool Seleccion = false;
     public float raycastDistance = 100f;
-    [SerializeField]
-    GameObject ButtonRotar;
-    [SerializeField]
-    GameObject ButtonIZQ;
-    [SerializeField]
-    GameObject ButtonDEREC;
-    [SerializeField]
-    GameObject ButtonABAJ;
-    [SerializeField]
-    GameObject ButtonARRIB;
-    [SerializeField]
-    GameObject ButtonEliminar;
-    [SerializeField]
-    GameObject ButtonInfo;
+
+        [SerializeField]
+      GameObject BotonEscalar;
+        [SerializeField]
+      GameObject ButtonRotar;
+        [SerializeField]
+      GameObject ButtonIZQ;
+        [SerializeField]
+      GameObject ButtonDEREC;
+        [SerializeField]
+      GameObject ButtonABAJ;
+        [SerializeField]
+      GameObject ButtonARRIB;
+        [SerializeField]
+      GameObject ButtonEliminar;
+        [SerializeField]
+      GameObject ButtonInfo;
+        [SerializeField]
+      GameObject Sphere;
+        [SerializeField]
+     GameObject ButtonEscalarMass;
+        [SerializeField]
+     GameObject ButtonEscalarMenoss;
+    private float scale;
+    
     void Update()
     {
 
@@ -72,6 +82,7 @@ public class rotación : MonoBehaviour
 
                 // Si el rayo toca algo, 'hit' contendrá el objeto tocado.
                 selectedObject = hit.collider.gameObject;
+             //   Sphere.SetActive(true);
 
                 // Imprimir el nombre del objeto seleccionado en la consola
                 Debug.Log("Seleccionaste el objeto: " + selectedObject.name);
@@ -79,9 +90,16 @@ public class rotación : MonoBehaviour
 
                 // Aquí puedes hacer algo con el objeto seleccionado, por ejemplo cambiar su color:
                 // para ponerlo con colores selectedObject.GetComponent<Renderer>().material.color = Color.blue;
+
+                //selectedObject.GetComponent<Renderer>().material.color = Color.blue;
+
                 selectedObject.GetComponent<Renderer>();
 
+
+
+
             }
+
         }
 
     }
@@ -164,6 +182,7 @@ public class rotación : MonoBehaviour
 
     public void Eliminar()
     {
+        // setloop(-1f);
        // LeanTween.scale(selectedObject, Vector3.zero, 2f).setEase(tipoAnimacion).setOnComplete(() =>
        // {
 
@@ -191,6 +210,98 @@ public class rotación : MonoBehaviour
 
     }
 
+    // Quiero que se agrande solo en 3 posiciones por que no me interesa que un objeto este mucho mas grande que el mapa ya que puede inplementar Errores Ya sea al escalar el tamaño
 
 
+     public void EscalarMas()
+     {
+     
+        if (ButtonEscalarMass.activeSelf)
+        {
+
+            LeanTween.scale(selectedObject, new Vector3(9f, 9f, 9f), 3f).setEase(tipoAnimacion);
+
+        }
+
+
+     }
+    public void EscalarMass()
+    {
+
+        if (ButtonEscalarMass.activeSelf)
+        {
+
+            LeanTween.scale(selectedObject, new Vector3(14f, 14f, 14f), 3f).setEase(tipoAnimacion);
+
+        }
+
+
+    }
+    public void EscalarMasss()
+    {
+
+        if (ButtonEscalarMass.activeSelf)
+        {
+
+            LeanTween.scale(selectedObject, new Vector3(18f, 18f, 18f), 3f).setEase(tipoAnimacion);
+
+        }
+
+
+    }
+    public void EliminarMenoss()
+    {
+
+
+        if (ButtonEscalarMenoss.activeSelf)
+        {
+
+
+            LeanTween.scale(selectedObject, new Vector3(7f, 7f, 7f), 3f).setEase(tipoAnimacion);
+
+
+
+        }
+
+
+
+
+    }
+
+    public void EliminarMenosss()
+    {
+
+
+        if (ButtonEscalarMenoss.activeSelf)
+        {
+
+
+            LeanTween.scale(selectedObject, new Vector3(5f, 5f, 5f), 3f).setEase(tipoAnimacion);
+
+
+
+        }
+
+
+
+
+    }
+    public void EliminarMenossss()
+    {
+
+
+        if (ButtonEscalarMenoss.activeSelf)
+        {
+
+
+            LeanTween.scale(selectedObject, new Vector3(3f, 3f, 3f), 3f).setEase(tipoAnimacion);
+
+
+
+        }
+
+
+
+
+    }
 }
