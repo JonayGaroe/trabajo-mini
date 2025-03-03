@@ -39,7 +39,7 @@ public class creaciontips : MonoBehaviour
         // ? Enviar el objeto a rotacion.cs para que pueda moverse y rotarse antes de colocarse
         if (objectController != null)
         {
-            objectController.SeleccionarObjeto(objetoCreado);
+            objectController.AsignarObjetoSeleccionado(objetoCreado);
         }
         else
         {
