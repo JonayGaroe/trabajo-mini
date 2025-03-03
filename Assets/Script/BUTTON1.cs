@@ -5,94 +5,44 @@ using UnityEngine;
 
 public class BUTTON1 : MonoBehaviour
 {
-      [SerializeField]
-    GameObject BotonCrear;
+    [SerializeField] private GameObject BotonCrear;
+    [SerializeField] private GameObject InformacionCrear;
+    [SerializeField] private GameObject InformacionCrearla;
 
-      [SerializeField]
-    GameObject BotonGirar;
+    private rotacion objectController;
+    private bool objetoColocado = false;
 
-      [SerializeField]
-    GameObject BotonMover;
+    void Start()
+    {
+        objectController = FindObjectOfType<rotacion>();
+        CheckReferences();
 
-       [SerializeField]
-    GameObject BotonEliminar;
+        // Asegurar que la lista de creación está desactivada al iniciar
+        if (InformacionCrearla != null) InformacionCrearla.SetActive(false);
+    }
 
-    GameObject objetotiendas;
+    private void CheckReferences()
+    {
+        if (BotonCrear == null) Debug.LogError("? Falta asignar 'BotonCrear'", this);
+        if (InformacionCrear == null) Debug.LogError("? Falta asignar 'InformacionCrear'", this);
+        if (InformacionCrearla == null) Debug.LogError("? Falta asignar 'InformacionCrearla'", this);
+    }
 
-       [SerializeField]
-    GameObject GameObject;
-
-      [SerializeField]
-    GameObject InformacionCrear;
-
-         [SerializeField]
-    GameObject InformacionCrearla;
-    [SerializeField]
-    GameObject InformacionMover;
-
-    [SerializeField]
-    GameObject InformacionRotar;
-    [SerializeField]
-    GameObject BotonEscalar;
-    [SerializeField]
-    GameObject InformarEscalar;
-
-
+    // ? Mostrar la lista de objetos al presionar "Crear"
     public void ClickEnBotonCrear()
     {
-
-
-        BotonCrear.SetActive(true);
-        InformacionCrear.SetActive(false);
-        InformacionCrearla.SetActive(true);
-
+        if (InformacionCrear != null) InformacionCrear.SetActive(false);
+        if (InformacionCrearla != null) InformacionCrearla.SetActive(true);
+        objetoColocado = false;
     }
 
-    public void ClickEnTienda()
+    // ? Ocultar la lista de creación cuando se coloca un objeto
+    public void ObjetoColocado()
     {
-
-        BotonCrear.SetActive(false);
-
+        if (!objetoColocado)
+        {
+            if (InformacionCrearla != null) InformacionCrearla.SetActive(false);
+            objetoColocado = true;
+        }
     }
-
-    public void ClickEnMover()
-    {
-
-
-        BotonMover.SetActive(true);
-        InformacionMover.SetActive(true);
-
-    }
-
-    public void ClickEnOk()
-    {
-
-        InformacionMover.SetActive(false);
-        BotonMover.SetActive(false);
-        BotonGirar.SetActive(false);
-        InformacionRotar.SetActive(false);
-        InformacionCrear.SetActive(true);
-        BotonEscalar.SetActive(false);
-        InformarEscalar.SetActive(false);
-    }
-    public void BotonEscalars()
-    {
-
-        BotonEscalar.SetActive(true);
-        InformarEscalar.SetActive(true);
-        BotonCrear.SetActive(false);
-    }
-
-
-
-
-    public void BotonGiratorio()
-    {
-
-        InformacionRotar.SetActive(true);
-        BotonGirar.SetActive(true);
-
-    }
-
-
 }
