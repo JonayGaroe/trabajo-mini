@@ -9,6 +9,8 @@ public class BUTTON1 : MonoBehaviour
     [SerializeField] private GameObject BotonCrear;       // Botón que inicia la creación de objetos
     [SerializeField] private GameObject InformacionCrear; // Panel de información inicial antes de crear
     [SerializeField] private GameObject InformacionCrearla; // Panel con la lista de objetos a crear
+    [SerializeField] private GameObject InformacionbotonCrear;    // //  Activa la información de Crear
+
 
     // ?? Referencia al script de rotación (rotacion.cs) para gestionar los objetos creados
 
@@ -17,7 +19,7 @@ public class BUTTON1 : MonoBehaviour
 
     void Start()
     {
-
+    
         // ?? Comprobar si todas las referencias necesarias están asignadas en el Inspector
         CheckReferences();
 
@@ -37,6 +39,7 @@ public class BUTTON1 : MonoBehaviour
     // Muestra la lista de objetos disponibles para crear
     public void ClickEnBotonCrear()
     {
+        InformacionbotonCrear.SetActive(true);
         if (InformacionCrear != null) InformacionCrear.SetActive(false); // ?? Oculta el panel de información inicial
         if (InformacionCrearla != null) InformacionCrearla.SetActive(true); // ?? Muestra la lista de objetos
         objetoColocado = false; // ?? Resetea el estado del objeto para permitir nuevas creaciones
@@ -50,6 +53,7 @@ public class BUTTON1 : MonoBehaviour
         {
             if (InformacionCrearla != null) InformacionCrearla.SetActive(false); // ?? Oculta la lista de objetos
             objetoColocado = true; // ?? Marca que un objeto ya ha sido colocado
+            InformacionbotonCrear.SetActive(false);
         }
     }
 }

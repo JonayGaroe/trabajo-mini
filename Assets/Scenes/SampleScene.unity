@@ -1351,8 +1351,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.05, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 0.1, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 528205062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1752,8 +1752,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Para Escalar objetos selecionalo con click y Dependiendo del Tama\xF1o
-    que quieras podras agrandar o modificar el tama\xF1o"
+  m_text: "Para Escalar Objetos Selecionalo con Click y Con la rueda del raton para
+    Arriba y para Abajo Colocas el Tama\xF1o Click para Confirmar"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1780,8 +1780,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.04
-  m_fontSizeBase: 20.04
+  m_fontSize: 18.5
+  m_fontSizeBase: 18.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3144,6 +3144,7 @@ MonoBehaviour:
   - {fileID: 1353853269}
   - {fileID: 1274229960}
   - {fileID: 1667788664}
+  InformacionbotonCrear: {fileID: 951906539}
 --- !u!4 &315727665
 Transform:
   m_ObjectHideFlags: 0
@@ -3174,6 +3175,7 @@ MonoBehaviour:
   BotonCrear: {fileID: 587163092}
   InformacionCrear: {fileID: 587163092}
   InformacionCrearla: {fileID: 587163092}
+  InformacionbotonCrear: {fileID: 951906539}
 --- !u!1 &359218592
 GameObject:
   m_ObjectHideFlags: 0
@@ -4500,8 +4502,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.7269974, y: 8.011079, z: -33.59781}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 73920741}
   m_Father: {fileID: 0}
@@ -6610,6 +6612,7 @@ MonoBehaviour:
   BotonCrear: {fileID: 0}
   InformacionCrear: {fileID: 0}
   InformacionCrearla: {fileID: 0}
+  InformacionbotonCrear: {fileID: 0}
 --- !u!1 &884538413
 GameObject:
   m_ObjectHideFlags: 0
@@ -7337,8 +7340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mueve atravez de los botones donde quieres colocar el Item y al Ok cuando
-    acabes
+  m_text: Ahora Podras Mover el Objeto con el Raton y Colocarlo Con el Click
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8245,6 +8247,10 @@ MonoBehaviour:
   botonEscalar: {fileID: 462781140}
   botonMover: {fileID: 130836415}
   botonRotar: {fileID: 312242405}
+  InformacionbotonEliminar: {fileID: 1061186501}
+  InformacionbotonEscalar: {fileID: 839542768}
+  InformacionbotonMover: {fileID: 1475266846}
+  InformacionbotonRotar: {fileID: 841574391}
   scaleSpeed: 0.1
   minScale: 3
   maxScale: 12
@@ -10347,8 +10353,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1133164604}
-        m_TargetAssemblyTypeName: "rotaci\xF3n, Assembly-CSharp"
-        m_MethodName: Eliminar
+        m_TargetAssemblyTypeName: rotacion, Assembly-CSharp
+        m_MethodName: ActivarModoEliminar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10988,7 +10994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Coloca un objeto muevelo y Rotalo
+  m_text: Elige un Objeto y Colocalo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12117,7 +12123,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mueve atravez del botone donde quieres Rotar el Item y al Ok cuando acabes
+  m_text: Ahora podras Rotar y Mover el Objeto y Decorarlo como quieras, Cuando acabes
+    Confirmas con Click
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

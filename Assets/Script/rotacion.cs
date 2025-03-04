@@ -37,6 +37,13 @@ public class rotacion : MonoBehaviour
     [SerializeField] private Button botonEscalar;  // Botón para activar el modo de escalado
     [SerializeField] private Button botonMover;    // Botón para activar el modo de mover
     [SerializeField] private Button botonRotar;    // Botón para activar el modo de rotación
+    
+
+    //Informar
+    [SerializeField] private GameObject InformacionbotonEliminar; // //  Activa la información de eliminar
+    [SerializeField] private GameObject InformacionbotonEscalar;  // //  Activa la información de Escalar
+    [SerializeField] private GameObject InformacionbotonMover;    // //  Activa la información de Mover
+    [SerializeField] private GameObject InformacionbotonRotar;    // //  Activa la información de Rotar
 
     // 🔥 Parámetros de escalado
     [SerializeField] private float scaleSpeed = 0.1f; // Velocidad de escalado
@@ -107,6 +114,9 @@ public class rotacion : MonoBehaviour
 
 
 
+
+
+
         /*
 
         if (isPlacing && selectedObject != null)
@@ -151,6 +161,7 @@ public class rotacion : MonoBehaviour
             {
                 isPlacing = false;
                 isMoving = false;
+                InformacionbotonMover.SetActive(false);
                 AplicarAnimacionFinal();
             }
         }
@@ -170,6 +181,8 @@ public class rotacion : MonoBehaviour
                 isPlacing = false;
                 isMoving = false;
                 isRotating = false;
+                InformacionbotonRotar.SetActive(false);
+                InformacionbotonMover.SetActive(false);
                 AplicarAnimacionFinal();
             }
         }
@@ -195,6 +208,7 @@ public class rotacion : MonoBehaviour
                 isMoving = false;
                 isRotating = false;
                 isScaling = false;
+                InformacionbotonEscalar.SetActive(false);
                 AplicarAnimacionFinal();
             }
         }
@@ -241,6 +255,7 @@ public class rotacion : MonoBehaviour
     // ✅ Método para mover el objeto con el ratón
     private bool MoverConMouse()
     {
+
         if (selectedObject == null) return false;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -252,6 +267,7 @@ public class rotacion : MonoBehaviour
             return true;
         }
         return false;
+
     }
 
     // ✅ Método para rotar el objeto con la rueda del ratón
@@ -282,7 +298,10 @@ public class rotacion : MonoBehaviour
         if (selectedObject != null)
         {
             isMoving = true;
+            InformacionbotonMover.SetActive(true);
+
         }
+
     }
 
 
@@ -293,6 +312,7 @@ public class rotacion : MonoBehaviour
         if (selectedObject != null)
         {
             isRotating = true;
+            InformacionbotonRotar.SetActive(true);
         }
     }
 
@@ -305,6 +325,8 @@ public class rotacion : MonoBehaviour
             if (selectedObject == suelo)
             {
                 Debug.Log("⚠️ No puedes eliminar el suelo.");
+                InformacionbotonEliminar.SetActive(false); // 🔥 Desactiva la información
+
                 return;
             }
 
@@ -312,6 +334,8 @@ public class rotacion : MonoBehaviour
             if (selectedObject.layer == LayerMask.NameToLayer("Pared"))
             {
                 Debug.Log("⚠️ No puedes eliminar una pared.");
+                InformacionbotonEliminar.SetActive(false); // 🔥 Desactiva la información
+
                 return;
             }
 
@@ -322,6 +346,8 @@ public class rotacion : MonoBehaviour
                 {
                     Destroy(selectedObject);
                     selectedObject = null;
+                    InformacionbotonEliminar.SetActive(false);
+
                 });
         }
     }
@@ -373,7 +399,15 @@ public class rotacion : MonoBehaviour
     }
 
     */
-
+    // ✅ Activa el modo eliminar (muestra la información antes de eliminar)
+    public void ActivarModoEliminar()
+    {
+        if (selectedObject != null)
+        {
+            InformacionbotonEliminar.SetActive(true); // 🔥 Activa la información de eliminar
+            EliminarObjetoSeleccionado(); // Llama al método de eliminación
+        }
+    }
 
 
 
@@ -383,6 +417,7 @@ public class rotacion : MonoBehaviour
         if (selectedObject != null)
         {
             isScaling = true;
+            InformacionbotonEscalar.SetActive(true);
         }
     }
 }

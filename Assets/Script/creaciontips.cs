@@ -27,6 +27,8 @@ public class creaciontips : MonoBehaviour
     // ?? Referencia al script "rotacion.cs" para manejar el objeto recién creado
     private rotacion objectController;
 
+
+
     void Start()
     {
         // ?? Busca automáticamente el script "rotacion.cs" en la escena y lo asigna
@@ -39,7 +41,7 @@ public class creaciontips : MonoBehaviour
             return;
         }
 
-        // ?? Asigna la función `CrearObjeto(index)` a cada botón de la lista `botonesCrear`
+        // ?? Asigna la función CrearObjeto(index) a cada botón de la lista botonesCrear
         for (int i = 0; i < botonesCrear.Length; i++)
         {
             int index = i; // Se almacena en una variable para evitar problemas con lambdas
@@ -72,5 +74,9 @@ public class creaciontips : MonoBehaviour
         // ?? Ocultar el panel de creación y desactivar el botón después de crear un objeto
         if (InformacionCrearla != null) InformacionCrearla.SetActive(false);
         if (BotonCrear != null) BotonCrear.SetActive(false);
+
     }
+
 }
+
+
